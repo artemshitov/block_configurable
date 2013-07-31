@@ -15,7 +15,8 @@ Or include into your `Gemfile`:
     gem 'block_configurable', '~> 0.9.0'
 
 ## Usage
-
+    
+    ```ruby
     class MyClass
       include BlockConfigurable
 
@@ -45,3 +46,4 @@ Or include into your `Gemfile`:
 
     MyClass.configuration.another_one
     #=> 'The third'
+    ```
