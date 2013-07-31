@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = BlockConfigurable::VERSION
   spec.authors       = ["Artem Shitov"]
   spec.email         = ["inbox@artemshitov.ru"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{A little mixin to make your classes and modules configurable using either single statements or blocks.}
+  spec.summary       = %q{A little mixin to make your classes and modules configurable}
+  spec.homepage      = "https://github.com/artemshitov/block_configurable"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
