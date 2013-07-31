@@ -1,6 +1,6 @@
 # BlockConfigurable
 
-[![Build Status](https://travis-ci.org/parcels/usps_tracking.png?branch=master)](https://travis-ci.org/parcels/usps_tracking) [![Code Climate](https://codeclimate.com/github/artemshitov/block_configurable.png)](https://codeclimate.com/github/artemshitov/block_configurable)
+[![Build Status](https://travis-ci.org/artemshitov/block_configurable.png?branch=master)](https://travis-ci.org/artemshitov/block_configurable) [![Code Climate](https://codeclimate.com/github/artemshitov/block_configurable.png)](https://codeclimate.com/github/artemshitov/block_configurable)
 
 A little mixin to make your classes and modules configurable using either single statements or blocks.
 
