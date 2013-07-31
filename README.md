@@ -16,34 +16,34 @@ Or include into your `Gemfile`:
 
 ## Usage
     
-    ```ruby
-    class MyClass
-      include BlockConfigurable
+```ruby
+class MyClass
+  include BlockConfigurable
 
-      config :param_with_default_value, 'A default!'
-      config :param_without_default_value
-      config :another_one
-    end
+  config :param_with_default_value, 'A default!'
+  config :param_without_default_value
+  config :another_one
+end
 
-    MyClass.configuration.param_with_default_value
-    #=> 'A default!'
+MyClass.configuration.param_with_default_value
+#=> 'A default!'
 
-    MyClass.configuration.param_without_default_value
-    #=> nil
+MyClass.configuration.param_without_default_value
+#=> nil
 
-    MyClass.configure do |c|
-      c.param_with_default_value = 'My values, my rules'
-      c.param_without_default_value = 'A value now!'
-    end
+MyClass.configure do |c|
+  c.param_with_default_value = 'My values, my rules'
+  c.param_without_default_value = 'A value now!'
+end
 
-    MyClass.configuration.param_with_default_value
-    #=> 'My values, my rules'
+MyClass.configuration.param_with_default_value
+#=> 'My values, my rules'
 
-    MyClass.configuration.param_without_default_value
-    #=> 'A value now!'
+MyClass.configuration.param_without_default_value
+#=> 'A value now!'
 
-    MyClass.configuration.another_one = 'The third'
+MyClass.configuration.another_one = 'The third'
 
-    MyClass.configuration.another_one
-    #=> 'The third'
-    ```
+MyClass.configuration.another_one
+#=> 'The third'
+```
