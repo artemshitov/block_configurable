@@ -1,29 +1,45 @@
 # BlockConfigurable
 
-TODO: Write a gem description
+A little mixin to make your classes and modules configurable using either single statements or blocks.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install as a standalone gem:
 
-    gem 'block_configurable'
+    gem install block_configurable
 
-And then execute:
+Or include into your `Gemfile`:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install block_configurable
+    gem 'block_configurable', '~> 0.9.0'
 
 ## Usage
 
-TODO: Write usage instructions here
+    class MyClass
+      include BlockConfigurable
 
-## Contributing
+      config :param_with_default_value, 'A default!'
+      config :param_without_default_value
+      config :another_one
+    end
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+    MyClass.configuration.param_with_default_value
+    #=> 'A default!'
+
+    MyClass.configuration.param_without_default_value
+    #=> nil
+
+    MyClass.configure do |c|
+      c.param_with_default_value = 'My values, my rules'
+      c.param_without_default_value = 'A value now!'
+    end
+
+    MyClass.configuration.param_with_default_value
+    #=> 'My values, my rules'
+
+    MyClass.configuration.param_without_default_value
+    #=> 'A value now!'
+
+    MyClass.configuration.another_one = 'The third'
+
+    MyClass.configuration.another_one
+    #=> 'The third'
