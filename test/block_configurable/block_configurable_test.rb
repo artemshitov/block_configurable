@@ -10,6 +10,12 @@ class Configurable
   config :value_to_test_hash, :test
 end
 
+module ConfigurableModule
+  include BlockConfigurable
+
+  config :value_with_default, 1
+end
+
 class BlockConfigurableTest < Minitest::Test
   attr_reader :configuration
 
@@ -35,5 +41,9 @@ class BlockConfigurableTest < Minitest::Test
   def test_can_be_converted_to_hash
     assert_equal 4, configuration.to_hash.size
     assert_equal :test, configuration.to_h[:value_to_test_hash]
+  end
+
+  def test_can_be_included_in_a_module_too
+    assert_equal 1, ConfigurableModule.configuration.value_with_default
   end
 end
