@@ -1,6 +1,6 @@
 # BlockConfigurable
 
-[![Build Status](https://travis-ci.org/artemshitov/block_configurable.png?branch=master)](https://travis-ci.org/artemshitov/block_configurable) [![Code Climate](https://codeclimate.com/github/artemshitov/block_configurable.png)](https://codeclimate.com/github/artemshitov/block_configurable)
+[![Build Status](https://travis-ci.org/artemshitov/block_configurable.png?branch=master)](https://travis-ci.org/artemshitov/block_configurable) [![Code Climate](https://codeclimate.com/github/artemshitov/block_configurable.png)](https://codeclimate.com/github/artemshitov/block_configurable) [![Gem Version](https://badge.fury.io/rb/block_configurable.png)](http://badge.fury.io/rb/block_configurable)
 
 A little mixin to make your classes and modules configurable using either single statements or blocks.
 
@@ -12,7 +12,9 @@ Install as a standalone gem:
 
 Or include into your `Gemfile`:
 
-    gem 'block_configurable', '~> 0.9.0'
+```ruby
+gem 'block_configurable', '~> 0.9.0'
+```
 
 ## Usage
     
