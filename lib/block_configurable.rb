@@ -18,6 +18,6 @@ module BlockConfigurable
   
   def self.included(receiver)
     receiver.extend ClassMethods
-    receiver.send :private_class_method, :config
+    receiver.send :private_class_method, :configurable
   end
 end
