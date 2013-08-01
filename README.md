@@ -13,39 +13,42 @@ Install as a standalone gem:
 Or include into your `Gemfile`:
 
 ```ruby
-gem 'block_configurable', '~> 0.9.0'
+gem 'block_configurable', '~> 0.10.0'
 ```
 
 ## Usage
-    
+
+Set up class (or module). Only parameters explicitly listed will be available for configuration.
+
 ```ruby
 class MyClass
   include BlockConfigurable
 
-  config :param_with_default_value, 'A default!'
-  config :param_without_default_value
-  config :another_one
+  configurable :param_with_default_value, 'A default!'
+  configurable :param_without_default_value
+  configurable :another_one
+end
+```
+
+Configure it:
+
+```ruby
+MyClass.configure do |c|
+  c.param_without_default_value = 'A value now!'
+  c.another_one = 'My values, my rules'
 end
 
+# or
+
+MyClass.configuration.another_one = 'My values, my rules'
+```
+
+Read configuration:
+
+```ruby
 MyClass.configuration.param_with_default_value
 #=> 'A default!'
 
-MyClass.configuration.param_without_default_value
-#=> nil
-
-MyClass.configure do |c|
-  c.param_with_default_value = 'My values, my rules'
-  c.param_without_default_value = 'A value now!'
-end
-
-MyClass.configuration.param_with_default_value
-#=> 'My values, my rules'
-
-MyClass.configuration.param_without_default_value
-#=> 'A value now!'
-
-MyClass.configuration.another_one = 'The third'
-
 MyClass.configuration.another_one
-#=> 'The third'
+#=> 'My values, my rules'
 ```
