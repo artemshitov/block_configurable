@@ -18,7 +18,7 @@ gem 'block_configurable', '~> 0.10.0'
 
 ## Usage
 
-Set up class (or module). Only parameters explicitly listed will be available for configuration.
+Set up your class (or module). Only parameters explicitly listed will be available for configuration.
 
 ```ruby
 class MyClass
