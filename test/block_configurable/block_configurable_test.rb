@@ -4,16 +4,16 @@ require 'block_configurable'
 class Configurable
   include BlockConfigurable
 
-  config :value_with_default, 1
-  config :value_without_default, nil
-  config :value_to_change, 'a'
-  config :value_to_test_hash, :test
+  configurable :value_with_default, 1
+  configurable :value_without_default, nil
+  configurable :value_to_change, 'a'
+  configurable :value_to_test_hash, :test
 end
 
 module ConfigurableModule
   include BlockConfigurable
 
-  config :value_with_default, 1
+  configurable :value_with_default, 1
 end
 
 class BlockConfigurableTest < Minitest::Test

@@ -7,7 +7,7 @@ module BlockConfigurable
       @configuration ||= Configuration.new
     end
 
-    def config(param, default = nil)
+    def configurable(param, default = nil)
       configuration.add_config(param, default)
     end
 
